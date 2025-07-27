@@ -11,10 +11,12 @@
   },
   "dependencies": {
     "ethers": "^6.15.0",
+    "framer-motion": "^12.23.9",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hot-toast": "^2.5.2",
-    "three": "^0.178.0"
+    "three": "^0.178.0",
+    "use-sound": "^5.0.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.30.1",
