@@ -1,0 +1,249 @@
+/* --- THÈME SOMNIA POUR BLOCKSNIPER (Version Optimisée) --- */
+
+/* 1. Configuration des Variables et Style Global */
+:root {
+  --background-dark: #0D0B1F;    /* Bleu-violet très sombre */
+  --background-light: #1A1731;   /* Violet plus clair pour les cartes */
+  --primary-accent: #BE4EFF;     /* Magenta/Violet vibrant */
+  --secondary-accent: #00F0FF;   /* Cyan lumineux */
+  --text-primary: #f0f0f0;
+  --text-secondary: #A9A5D3;    /* Lavande clair pour textes secondaires */
+  --font-main: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: var(--font-main);
+  background: linear-gradient(145deg, #0b0c10, #0f1117);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  padding: 5vh 0;
+}
+
+/* 2. Conteneur Principal de l'App */
+.App {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--background-light);
+  border: 1px solid #BE4EFF30;
+  border-radius: 16px;
+  box-shadow: 0 0 40px #be4eff1a;
+  text-align: center;
+}
+
+/* 3. En-tête */
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #BE4EFF50;
+}
+.App-header h1 {
+  font-size: 2.2em; /* Légèrement plus grand */
+  margin: 0;
+  color: var(--text-primary);
+}
+.App-header h1 .gradient-text {
+  background: linear-gradient(to right, var(--primary-accent), var(--secondary-accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.version-tag {
+font-size: 0.7em; 
+font-weight: bold;
+color: var(--background-dark);
+background-color: var(--secondary-accent);
+padding: 5px 10px; / Ajuster le padding pour un aspect plus grand */
+border-radius: 10px;
+margin-left: 12px;
+vertical-align: middle;
+text-transform: uppercase;
+}
+.connect-button {
+  background: var(--primary-accent); color: var(--background-dark);
+  font-weight: bold; padding: 10px 20px; border: none;
+  border-radius: 8px; transition: all 0.2s; cursor: pointer;
+}
+.connect-button:hover {
+  box-shadow: 0 0 15px var(--primary-accent);
+}
+
+/* 4. Sections d'Information (Dashboard, Hall of Fame, etc.) */
+.dashboard { margin-bottom: 2rem; }
+.dashboard h2 {
+  font-size: 1.2em; color: var(--text-secondary);
+  text-transform: uppercase; letter-spacing: 2px;
+}
+.block-number {
+  font-size: 4em; font-weight: bold; color: var(--secondary-accent);
+  text-shadow: 0 0 15px #00f0ff80; margin: 0;
+}
+
+.hall-of-fame {
+  background: #00000020; padding: 1.5rem; margin: 2rem 0;
+  border-radius: 12px; border-top: 1px solid #BE4EFF50;
+}
+.hall-of-fame h3 {
+  margin-top: 0; font-size: 1.5em; color: var(--primary-accent);
+}
+.fame-entries {
+  display: flex; justify-content: space-around;
+  gap: 1rem; margin-top: 1rem;
+}
+.fame-entry {
+  flex: 1; background: var(--background-dark);
+  padding: 1rem; border-radius: 8px;
+}
+.fame-entry h4 {
+  margin: 0 0 0.5rem 0; color: var(--text-secondary); font-size: 1em;
+}
+.fame-entry .fame-amount {
+  font-size: 1.5em; font-weight: bold; color: var(--accent-secondary); margin: 0;
+}
+.fame-entry .fame-player {
+  font-size: 0.9em; color: var(--text-secondary); margin: 0.25rem 0 0 0;
+}
+
+.result-display {
+  background-color: #2c2c2c; border-left: 4px solid var(--primary-accent);
+  padding: 1rem 1.5rem; margin: 2rem 0; text-align: left;
+  border-radius: 0 8px 8px 0;
+}
+.result-display h3 { margin-top: 0; color: var(--primary-accent); }
+.result-display p { margin: 0.5rem 0; }
+
+/* 5. Boutons et Formulaires */
+.difficulty-selector, .quick-targets {
+  margin-bottom: 1.5rem; display: flex; gap: 10px;
+  justify-content: center; align-items: center;
+}
+.difficulty-selector span, .quick-targets span {
+  color: var(--text-secondary); margin-right: 1em;
+}
+.difficulty-selector button, .quick-targets button {
+  background: transparent; border: 1px solid var(--secondary-accent);
+  color: var(--secondary-accent); padding: 8px 16px; border-radius: 20px;
+  cursor: pointer; transition: all 0.2s; margin: 0 5px;
+}
+.difficulty-selector button.active,
+.difficulty-selector button:hover,
+.quick-targets button:hover {
+  background: var(--secondary-accent); color: var(--background-dark);
+  box-shadow: 0 0 12px var(--secondary-accent);
+}
+
+.action-panel {
+  background-color: #00000020; padding: 1.5rem;
+  border-radius: 12px; margin: 2rem 0;
+}
+.target-input {
+  width: 80%; padding: 12px; font-size: 1.1em; border-radius: 8px;
+  border: 1px solid #BE4EFF50; background-color: var(--background-dark);
+  color: white; margin-bottom: 1rem;
+}
+.play-button {
+  width: 85%; padding: 15px; font-size: 1.2em; font-weight: bold;
+  cursor: pointer; border-radius: 8px; border: none;
+  background: var(--primary-accent); color: var(--background-dark);
+  transition: all 0.2s;
+}
+.play-button:disabled { background-color: #333; cursor: not-allowed; }
+.play-button:not(:disabled):hover { box-shadow: 0 0 15px var(--primary-accent); }
+
+/* 6. Panneaux d'Information du Bas */
+.game-info { display: flex; gap: 2rem; margin-top: 2rem; }
+.player-stats, .activity-feed {
+  background-color: #00000020; border: 1px solid #BE4EFF30;
+  padding: 1.5rem; border-radius: 12px; flex: 1; text-align: left;
+}
+.player-stats h3, .activity-feed h3 {
+  margin-top: 0; border-bottom: 1px solid #BE4EFF50;
+  padding-bottom: 0.5rem; text-align: center;
+}
+.activity-feed ul { list-style: none; padding: 0; margin: 0; }
+.activity-feed li { padding: 0.5rem 0; border-bottom: 1px solid #1A1731; }
+.activity-feed li:last-child { border-bottom: none; }
+
+/* 7. Modal du Profil */
+.profile-modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex; justify-content: center; align-items: center; z-index: 1000;
+}
+.profile-modal {
+  background: var(--background-light); padding: 2rem; border-radius: 16px;
+  width: 90%; max-width: 500px; position: relative;
+  border: 1px solid var(--primary-accent); box-shadow: 0 0 40px var(--primary-accent);
+}
+.profile-modal h2 { margin: 0; font-size: 1.8em; }
+.profile-modal .close-button {
+  position: absolute; top: 15px; right: 15px; background: #333;
+  border: none; color: white; width: 30px; height: 30px;
+  border-radius: 50%; cursor: pointer; font-weight: bold;
+}
+.profile-header { margin-bottom: 1.5rem; text-align: center; }
+.profile-avatar {
+  width: 80px; height: 80px; border-radius: 50%;
+  border: 2px solid var(--primary-accent); margin-bottom: 0.5rem;
+}
+.profile-address {
+  color: var(--text-secondary); font-family: monospace; font-size: 0.9em;
+}
+.profile-stats {
+  display: flex; justify-content: space-around; background: #00000020;
+  padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;
+}
+.stat-item {
+  display: flex; flex-direction: column; align-items: center;
+}
+.stat-item span {
+  font-size: 0.8em; color: var(--text-secondary); text-transform: uppercase;
+}
+.stat-item strong { font-size: 1.2em; color: var(--accent-secondary); }
+.profile-section { text-align: left; margin-bottom: 1.5rem; }
+.profile-section h3 {
+  margin: 0 0 0.5rem 0; border-bottom: 1px solid #BE4EFF50; padding-bottom: 0.5rem;
+}
+.profile-history {
+  text-align: left; max-height: 150px; overflow-y: auto; border: 1px solid #333;
+  padding: 1rem; border-radius: 8px; margin-top: 1rem; font-size: 0.9em;
+}
+.disconnect-button {
+  margin-top: 1.5rem; background-color: #9e2a2b; color: white;
+  border: none; padding: 10px 20px; border-radius: 8px;
+  font-weight: bold; cursor: pointer;
+}
+.username-form { display: flex; gap: 10px; margin: 1.5rem 0; }
+.username-form input {
+  flex-grow: 1; background-color: var(--background-dark);
+  border: 1px solid var(--primary-accent); color: white;
+  padding: 10px; border-radius: 8px;
+}
+.username-form button {
+  background-color: var(--primary-accent); border: none;
+  color: var(--background-dark); padding: 10px 15px;
+  border-radius: 8px; cursor: pointer;
+}
+
+/* Style pour le nouveau logo et titre */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* Espace entre le logo, le titre et le tag */
+}
+
+.app-logo {
+  height: 55px; /* Ajustez la hauteur comme vous le souhaitez */
+  width: auto;
+}
