@@ -1,12 +1,18 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## ✨ Key Features
 
-Currently, two official plugins are available:
+### Gameplay Mechanics
+* **Target Sniping:** The main objective is to have a transaction mined in a precise target block.
+* **Variable Difficulty:** Players can choose their difficulty by selecting a "window size" (1, 5, or 10 blocks), creating a risk/reward trade-off.
+* **Dynamic Entry Fees:** The entry fee for a specific block target increases with each failed attempt, making unpopular targets cheaper to try.
+* **Fair Wins:** A winner always receives their initial bet back, plus their winnings from the prize pool.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Economic Features
+* **Player-Funded Pools:** All prize pools in the game are funded by the players themselves. When a player misses a target, their wager is added to that block's prize pool for a future winner to claim.
+* **Automatic Bonus Funding:** When a player misses a target, the amount of their bet is automatically collected and distributed into different bonus pools at a rate of: 35% for Hard, 25% for Normal, 25% for Easy, and 15% for application fees. This makes the game self-funding.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Player Features & UX
+* **Player Profiles:** Players can create a unique username associated with their wallet address.
+* **Profile Modal:** A detailed profile view shows the player's username, address, STT balance, and a history of their personal game actions.
+* **Hall of Fame:** The contract tracks and the UI displays two all-time records: the "Biggest Win" (largest single prize) and the "Biggest Bettor" (greatest total amount wagered).
+* **Polished UI:** The frontend is built with React and features toast notifications, loading states, and a clean, themed interface.
